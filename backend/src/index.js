@@ -1,10 +1,10 @@
 // Importa el archivo 'configEnv.js' para cargar las variables de entorno
 import { PORT, HOST, PASS_SECRET } from "./config/configEnv.js";
-// Importa el módulo 'cors' para agregar los cors
+// Importa el módulo 'cors' para agregar los cors (Frontend)
 import cors from "cors";
 // Importa el módulo 'express' para crear la aplicacion web
 import express, { urlencoded, json } from "express";
-// Importamos morgan para ver las peticiones que se hacen al servidor
+// Importamos morgan para ver las peticiones que se hacen al servidor / Verificar peticiones que estamos haciendo
 import morgan from "morgan";
 // Importa el módulo 'express-session' para la gestión de sesiones
 import session from "express-session";
@@ -32,7 +32,7 @@ async function setupServer() {
       saveUninitialized: false,
     }));
 
-    // Agregamos los cors
+    // Agregamos los cors / FRONTEND
     app.use(cors({ credentials: true, origin: true }));
     // Agrega el middleware para el manejo de datos en formato URL
     app.use(urlencoded({ extended: true }));

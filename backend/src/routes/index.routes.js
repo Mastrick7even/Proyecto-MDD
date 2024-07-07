@@ -1,6 +1,7 @@
 "use strict";
 // Importa el modulo 'express' para crear las rutas
 import { Router } from "express";
+import formRoutes from "./form.routes.js";
 
 /** Enrutador de usuarios  */
 import userRoutes from "./user.routes.js";
@@ -13,7 +14,11 @@ const router = Router();
 
 // Define las rutas para los usuarios /api/users
 router.use("/user",  userRoutes);
+
 // Define las rutas para la autenticación /api/auth
 router.use("/auth", authRoutes);
+
+// Define las rutas para los formularios
+router.use('/form', formRoutes);
 
 export default router;
